@@ -1,0 +1,163 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar ul {
+    display: flex;
+    justify-content: center;
+}
+.navbar li {
+    list-style: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+.navbar .btn{
+    margin-right: 40px;
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, 0.61);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+.navbar .btn:hover{
+    background-color: white;
+    color: rgba(255, 0, 0, 0.61);
+}
+
+/* Layout */
+.container {
+    overflow: hidden;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px; /* Adjust based on navbar height */
+}
+
+.left-menu {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    transition: width 0.3s;
+}
+
+.left-menu .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+.left-menu ul li{
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: transform 0.1s ease;
+}
+
+.left-menu ul li:hover{
+    transform: scale(1.1);
+}
+
+.main-content {
+    width: 55%;
+    padding: 20px;
+}
+
+.right-panel {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Collapsible Menu */
+.left-menu ul {
+    list-style-type: none;
+}
+
+.left-menu ul li {
+    margin: 10px 0;
+}
+
+.left-menu ul {
+    display: block;
+}
+.left-menu.show ul {
+    display: none;
+}
+.collapse-btn{
+    cursor: pointer;
+}
+.collapse-btn:hover{
+    color: white;
+    background-color: #807e7e;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    .left-menu {
+        width: 100%;
+    }
+    .main-content {
+        width: 100%;
+    }
+    .right-panel {
+        width: 100%;
+    }
+    .collapse-btn {
+        display: block;
+    }
+    .left-menu ul {
+        display: none;
+    }
+    .left-menu.show ul {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-menu, .main-content, .right-panel {
+        width: 100%;
+    }
+}
+
+
+.chat-box{
+    margin-top: 60px;
+}
